@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animowana Strona Powitalna</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      text-shadow: 0 0 15px rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+      animation: fadeInUp 1.5s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards 0.8s;
+      color: #e0e0e0;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    button {
+      margin-top: 40px;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.25);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+      animation: pulse 2.5s infinite;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: rgba(255,255,255,0.5);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(255,255,255,0.4);}
+      50% { box-shadow: 0 0 30px rgba(255,255,255,0.8);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Witam na mojej stronie z animacjami</h1>
+  <p>Jestem młodym programistą i tworzę szybkie, nowoczesne oraz responsywne strony internetowe.</p>
+  <button onclick="alert('Dziękuje za zobaczenie')">Kontakt</button>
+
+</body>
+</html>
